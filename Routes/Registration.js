@@ -16,6 +16,11 @@ router.use(session({
     }
 }))
 
+router.get("/dbshow",(req,res)=>{
+    db.query("select * from order_info",(err,array)=>{
+        res.json({json:array})
+    })
+})
 // Sign Up form  
 
 router.post("/signUp",(req,res)=>{
