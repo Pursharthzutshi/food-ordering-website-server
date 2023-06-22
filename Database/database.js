@@ -4,12 +4,13 @@ const mysql = require("mysql");
 
 //create database
 
+
 const db = mysql.createConnection({
-    host:"localhost",
-    user:"root",
-    password:"Password",
-    port:3306,
-    database:"resturant_website"
+    host:process.env.MYSQL_ADDON_HOST,
+    user:process.env.MYSQL_ADDON_USER,
+    password:process.env.MYSQL_ADDON_PASSWORD,
+    port:process.env.MYSQL_ADDON_PORT,
+    database:process.env.MYSQL_ADDON_DB
 })
 
 db.connect((err)=>{
